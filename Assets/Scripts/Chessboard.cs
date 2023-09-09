@@ -75,13 +75,12 @@ public class Chessboard : MonoBehaviour
 
     public Vector2Int GetTileCoordinatesAtMousePosition(Vector3 mousePosition)
     {
-        Ray ray = Camera.main.ScreenPointToRay(mousePosition);
-        RaycastHit hit;
-        
-        int layerMask = 1 << LayerMask.NameToLayer("Tile");
-        Debug.Log(layerMask);
+        Vector2 pos = Camera.main.ScreenToWorldPoint(mousePosition);
+        int layerMask = LayerMask.GetMask("Tile");
 
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
+        RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, Mathf.Infinity, layerMask);
+
+        if(hit)
         {
             Debug.Log("Hit collider: " + hit.collider.gameObject.name);
             Tile tile = hit.collider.GetComponent<Tile>();
