@@ -27,16 +27,7 @@ public class Tile : MonoBehaviour
 
     void Update()
     {
-        // Handle highlighting based on both tile and piece mouse over
         highlight.SetActive(isMouseOverTile || isMouseOverPiece);
-    }
-
-    void OnMouseEnter(){
-        SetMouseOverTile(true);
-    }
-
-    void OnMouseExit(){
-        SetMouseOverTile(false);
     }
 
      public void SetMouseOverTile(bool value)

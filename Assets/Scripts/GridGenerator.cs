@@ -27,7 +27,6 @@ public class GridGenerator : MonoBehaviour
         cam.transform.position = new Vector3((float)width/2 -0.5f, (float)height/2 -0.5f, -10);
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         GenerateGrid();   

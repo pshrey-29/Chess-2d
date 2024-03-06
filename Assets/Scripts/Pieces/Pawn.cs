@@ -10,7 +10,11 @@ public class Pawn : ChessPiece
         List<Vector2Int> availableMoves = new List<Vector2Int>();
 
         //IMP:: move direction depends upon player- not implemented yet
-        Vector2Int forwardTile = new Vector2Int(currentX, currentY + 1);
+        int dir = 1;
+        if(this.pieceColor == PieceColor.Black){
+            dir = -1;
+        }
+        Vector2Int forwardTile = new Vector2Int(currentX, currentY + dir);
         if (!Chessboard.Instance.IsOccupied(forwardTile))
         {
             availableMoves.Add(forwardTile); //can't capture forward tile

@@ -6,7 +6,8 @@ public abstract class ChessPiece : MonoBehaviour
 {
     public enum PieceColor { White, Black }
 
-    public PieceColor pieceColor;
+    [SerializeField] private PieceColor m_pieceColor;
+    public PieceColor pieceColor{get{return m_pieceColor;}}
 
     public int currentX;
     public int currentY;
@@ -86,30 +87,6 @@ public abstract class ChessPiece : MonoBehaviour
         chessboard.ClearAllHighlights();
     }
 
-    protected void OnMouseDown()
-    {
-        HandleSelection();
-    }
-
-    private void OnMouseEnter()
-    {
-        Tile tile = chessboard.GetTile(new Vector2Int(currentX, currentY));
-        if (tile != null)
-        {
-            tile.SetMouseOverPiece(true);
-        }
-    }
-
-    private void OnMouseExit()
-    {
-        Tile tile = chessboard.GetTile(new Vector2Int(currentX, currentY));
-        if (tile != null)
-        {
-            tile.SetMouseOverPiece(false);
-        }
-    }
-
-    //getters
     public bool IsSelected()
     {
         return isSelected;

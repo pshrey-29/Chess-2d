@@ -82,7 +82,7 @@ public class Chessboard : MonoBehaviour
 
         if(hit)
         {
-            Debug.Log("Hit collider: " + hit.collider.gameObject.name);
+            // Debug.Log("Hit collider: " + hit.collider.gameObject.name);
             Tile tile = hit.collider.GetComponent<Tile>();
             if (tile != null)
             {
@@ -117,7 +117,6 @@ public class Chessboard : MonoBehaviour
 
     public void HighlightAvailableMoves(List<Vector2Int> availableMoves)
     {
-
         foreach (Vector2Int move in availableMoves)
         {
             Tile tile = GetTile(move);

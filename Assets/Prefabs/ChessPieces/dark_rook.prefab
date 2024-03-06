@@ -124,6 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca0fc9f996e02f24fb751c5bc289bce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pieceColor: 1
+  m_pieceColor: 1
   currentX: 0
   currentY: 0

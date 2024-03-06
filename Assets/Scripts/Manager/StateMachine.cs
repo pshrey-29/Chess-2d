@@ -17,7 +17,7 @@ public class StateMachine : MonoBehaviour
     private List<Vector2Int> availableMoves;
 
     private GameState currentState = GameState.WaitingForInput;
-    private ChessPiece.PieceColor currentPlayer = ChessPiece.PieceColor.White;
+    private ChessPiece.PieceColor currentPlayerColor = ChessPiece.PieceColor.White;
 
     private void Start()
     {
@@ -51,11 +51,12 @@ public class StateMachine : MonoBehaviour
         {
             Vector2Int selectedTile = GetTileAtMousePosition();
             ChessPiece piece = chessboard.GetPiece(selectedTile);
-            Debug.Log(selectedTile);
-            if (piece != null && piece.pieceColor == currentPlayer)
+            if (piece != null && piece.pieceColor == currentPlayerColor)
             {
                 selectedPiece = piece;
+                Debug.Log(selectedPiece.gameObject.name);
                 selectedPiece.HandleSelection();
+                availableMoves = selectedPiece.GetAvailableMoves();
                 currentState = GameState.PieceSelected;
             }
         }
@@ -66,6 +67,8 @@ public class StateMachine : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Vector2Int targetTile = GetTileAtMousePosition();
+            Debug.Log(targetTile);
+            Debug.Log(availableMoves);
 
             if (availableMoves.Contains(targetTile))
             {
@@ -90,7 +93,7 @@ public class StateMachine : MonoBehaviour
             currentState = GameState.WaitingForInput;
 
             //change player turn
-            currentPlayer = (currentPlayer == ChessPiece.PieceColor.White) ? ChessPiece.PieceColor.Black : ChessPiece.PieceColor.White;
+            currentPlayerColor = (currentPlayerColor == ChessPiece.PieceColor.White) ? ChessPiece.PieceColor.Black : ChessPiece.PieceColor.White;
         }
     }
 
@@ -104,7 +107,7 @@ public class StateMachine : MonoBehaviour
     }
 
     public ChessPiece.PieceColor CurrentPlayerColor(){
-        return currentPlayer;
+        return currentPlayerColor;
     }
 
 }
