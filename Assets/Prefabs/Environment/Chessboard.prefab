@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5937671776633544313
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5937671776633544327}
+  m_Layer: 0
+  m_Name: ChessPieces
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5937671776633544327
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5937671776633544313}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5937671777797349970}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5937671776885862222
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5937671776885862220}
+  m_Layer: 0
+  m_Name: Grid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5937671776885862220
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5937671776885862222}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5937671777797349970}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5937671777797349971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5937671777797349970}
+  - component: {fileID: 5937671777797349983}
+  m_Layer: 0
+  m_Name: Chessboard
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5937671777797349970
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5937671777797349971}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5937671776633544327}
+  - {fileID: 5937671776885862220}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5937671777797349983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5937671777797349971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61c701b5a5a77424392ab1c6eab0f2d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  piecePrefabs:
+    pawnPrefabDark: {fileID: 6938970587345995317, guid: 45a3de7c5cebbe041ac0ae92cb853ec7, type: 3}
+    rookPrefabDark: {fileID: 6780907071053471337, guid: ae421c3c356b2474ba1e3a36cfaca22d, type: 3}
+    knightPrefabDark: {fileID: 8905651178288002697, guid: 44a0b64bed11b68418b4cf57f4a4de04, type: 3}
+    bishopPrefabDark: {fileID: 2396434903520917221, guid: cdf91d1a732609b42a3e4d2b82ab8f47, type: 3}
+    queenPrefabDark: {fileID: 926700507614667460, guid: 4e197c1d82680324da0feae04ea92c2f, type: 3}
+    kingPrefabDark: {fileID: 3053982861868147109, guid: 9d4fe40871626254aaff1a8145f2280c, type: 3}
+    pawnPrefabLight: {fileID: 916879155086486743, guid: d5381b1fa17d82f47b327fbc64b1e665, type: 3}
+    rookPrefabLight: {fileID: 7865831538521093744, guid: f172e452407f5c142b709c4d7153f6fe, type: 3}
+    knightPrefabLight: {fileID: 2281476173344504104, guid: 27bfc3bba7fbac84e963a604d3a55ec9, type: 3}
+    bishopPrefabLight: {fileID: 8962372804654018909, guid: 3e21f3ab387f9854dbc3f29ea4d57a05, type: 3}
+    queenPrefabLight: {fileID: 7135813708185873433, guid: 3367449db1cff484e8a3b1606ca2e840, type: 3}
+    kingPrefabLight: {fileID: 8350857600924616670, guid: 38e1f8cba05d60344a12580a477489d3, type: 3}
+  chessPieceParent: {fileID: 5937671776633544327}
+  gridContainer: {fileID: 5937671776885862220}
+  tilePrefab: {fileID: -7387827006580289029, guid: d5f91b5f3c4142d4b8cb0239692227e4, type: 3}
+  cameraTransform: {fileID: 0}

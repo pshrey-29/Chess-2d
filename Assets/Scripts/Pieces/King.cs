@@ -17,8 +17,8 @@ public class King : ChessPiece
 
         foreach (var move in kingMoves)
         {
-            int newX = currentX + move[0];
-            int newY = currentY + move[1];
+            int newX = currentPosition.x + move[0];
+            int newY = currentPosition.y + move[1];
             Vector2Int newTile = new Vector2Int(newX, newY);
 
             if (IsValidMove(newTile))
@@ -28,28 +28,5 @@ public class King : ChessPiece
         }
 
         return availableMoves;
-    }
-
-    protected override bool IsValidMove(Vector2Int newPosition)
-    {
-        //tile exist on chessboard
-        if (!Chessboard.Instance.IsValidPosition(newPosition))
-        {
-            return false;
-        }
-
-        if(Chessboard.Instance.IsOccupied(newPosition))
-        {
-            if (Chessboard.Instance.IsOccupiedByOpponent(newPosition, pieceColor))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        
-        return true;
     }
 }

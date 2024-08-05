@@ -9,36 +9,36 @@ public class Pawn : ChessPiece
         //all valid moves for the pawn
         List<Vector2Int> availableMoves = new List<Vector2Int>();
 
-        //IMP:: move direction depends upon player- not implemented yet
-        int dir = 1;
-        if(this.pieceColor == PieceColor.Black){
-            dir = -1;
-        }
-        Vector2Int forwardTile = new Vector2Int(currentX, currentY + dir);
-        if (!Chessboard.Instance.IsOccupied(forwardTile))
+        int dir = this.pieceColor == PieceColor.White ? 1 : -1;
+
+        Vector2Int forwardTile = new Vector2Int(currentPosition.x, currentPosition.y + dir);
+        if (!chessboard.IsOccupied(forwardTile))
         {
             availableMoves.Add(forwardTile); //can't capture forward tile
         }
 
+        if (currentPosition.y == 1 || currentPosition.y == 6)
+        {
+            Vector2Int forwardTwoTile = new Vector2Int(currentPosition.x, currentPosition.y + dir * 2);
+            if (!chessboard.IsOccupied(forwardTwoTile) && !chessboard.IsOccupied(forwardTile))
+            {
+                availableMoves.Add(forwardTwoTile); //can't capture forward tile
+            }
+        }
+
         //capture moves in diagonal directions
-        Vector2Int captureLeft = new Vector2Int(currentX - 1, currentY + 1);
-        if (Chessboard.Instance.IsOccupiedByOpponent(captureLeft, pieceColor))
+        Vector2Int captureLeft = new Vector2Int(currentPosition.x - 1, currentPosition.y + dir);
+        if (chessboard.IsOccupiedByOpponent(captureLeft, pieceColor))
         {
             availableMoves.Add(captureLeft);
         }
 
-        Vector2Int captureRight = new Vector2Int(currentX + 1, currentY + 1);
-        if (Chessboard.Instance.IsOccupiedByOpponent(captureRight, pieceColor))
+        Vector2Int captureRight = new Vector2Int(currentPosition.x + 1, currentPosition.y + dir);
+        if (chessboard.IsOccupiedByOpponent(captureRight, pieceColor))
         {
             availableMoves.Add(captureRight);
         }
 
         return availableMoves;
-    }
-
-    protected override bool IsValidMove(Vector2Int newPosition)
-    {
-
-        return true;
     }
 }
